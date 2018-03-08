@@ -10,12 +10,19 @@ python:
 services:
   - docker
 
-#install:
-#  - "pip3 install -r requirements.txt"
-#
-#script:
-#  - "python manage.py test"
-
 script:
   - docker build -t patcurry/aws-django-docker .
   - docker run patcurry/aws-django-docker ./manage.py test
+
+# now how do I deploy this?
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+    secure: "$SECRETACCESSKEY"
+  region: "eu-central-1"
+  app: "django-docker-template"
+  app: "django-docker-template-dev"
+  bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
+  on:
+    branch: master
