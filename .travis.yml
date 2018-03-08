@@ -27,7 +27,9 @@ deploy:
   region: "eu-central-1"
   app: "django-docker-template"
   env: "django-docker-template-dev"
-  bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
+  #bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
+  # going to try a different bucket
+  bucket_name: "elasticbeanstalk-eu-central-1-215819054443"
   skip_cleanup: true
   on:
     branch: master
