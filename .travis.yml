@@ -28,5 +28,6 @@ deploy:
   app: "django-docker-template"
   env: "django-docker-template-dev"
   bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
+  skip_cleanup: true
   on:
     branch: master
