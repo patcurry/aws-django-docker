@@ -20,5 +20,5 @@ class IndexViewTests(TestCase):
         request = HttpRequest()
         response = index(request)
         html = response.content.decode('utf8')
-        self.assertIn('Hello, world!', html)
+        self.assertIn('Django!', html)
 
