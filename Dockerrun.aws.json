@@ -1,13 +1,4 @@
 {
-    "AWSEBDockerrunVersion": "2",
-    "volumes": [
-        {
-            "name": "db"
-        },
-        {
-            "name": "web"
-        }
-    ],
     "containerDefinitions": [
         {
             "essential": true,
@@ -16,12 +7,12 @@
         },
         {
             "command": [
-                "python",
-                "manage.py"
+                "python3",
+                "manage.py",
                 "runserver",
                 "0.0.0.0:8000"
             ],
-            "essential": true
+            "essential": true,
             "mountPoints": [
                 {
                     "containerPath": "/src",
