@@ -1,11 +1,21 @@
+# .travis.yml
+sudo: required
+
 language:
   - python
 
 python:
   - "3.6"
 
-install:
-  - "pip3 install -r requirements.txt"
+services:
+  - docker
+
+#install:
+#  - "pip3 install -r requirements.txt"
+#
+#script:
+#  - "python manage.py test"
 
 script:
-  - "python manage.py test"
+  - docker build -t patcurry/aws-django-docker .
+  - docker run patcurry/aws-django-docker ./manage.py test

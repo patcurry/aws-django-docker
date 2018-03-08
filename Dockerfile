@@ -7,4 +7,4 @@ ADD requirements.txt /src/
 RUN pip install -r requirements.txt
 ADD . /src
 EXPOSE 8000
-CMD ["./start.sh"]
+#CMD ["./start.sh"]
