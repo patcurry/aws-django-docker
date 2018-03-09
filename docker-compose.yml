@@ -3,12 +3,14 @@ version: "3"
 services:
   db:
     image: postgres
+    command: ["./wait-for-postgres.sh", "db", "./start.sh"]
   web:
     build: .
-    command: python3 manage.py runserver 0.0.0.0:8000
+    #command: python3 manage.py runserver 0.0.0.0:8000
+    #command: ["./wait-for-postgres.sh", "db", "./start.sh"]
     volumes:
       - .:/src
     ports:
       - "8000:8000"
-    depends_on:
-      - db
+#    depends_on:
+#      - db
