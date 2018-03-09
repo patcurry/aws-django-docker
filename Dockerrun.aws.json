@@ -1,42 +1,12 @@
 {
-    "AWSEBDockerrunVersion": 2,
-    "containerDefinitions": [
+    "AWSEBDockerrunVersion": "1",
+    "Image": {
+        "Name": "patcurry/aws-django-docker",
+        "Update": "true"
+    },
+    "Ports": [
         {
-            "name": "db",
-            "image": "postgres",
-            "essential": true
-        },
-        {
-            "name": "web",
-            "image": "patcurry/aws-django-docker",
-            "essential": true,
-            "command": [
-                "python3",
-                "manage.py",
-                "runserver",
-                "0.0.0.0:8000"
-            ],
-            "mountPoints": [
-                {
-                    "sourceVolume": "web"
-                    "containerPath": "/src",
-                }
-            ],
-            "portMappings": [
-                {
-                    "containerPort": 8000,
-                    "hostPort": 8000
-                }
-            ]
-        }
-    ],
-    "family": "",
-    "volumes": [
-        {
-            "name": "web",
-            "host": {
-                "sourcePath": "."
-            }
+            "ContainerPort": "8000"
         }
     ]
 }
