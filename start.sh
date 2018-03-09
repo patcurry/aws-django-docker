@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Database Migrations
-echo Make Migrations.
-exec python manage.py makemigrations
+#echo Make Migrations.
+#exec python manage.py makemigrations
 
-echo Migrate.
-exec python manage.py migrate
+#echo Migrate.
+#exec python manage.py migrate
 
 # Start Gunicorn processes
 echo Starting Gunicorn.
