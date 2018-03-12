@@ -20,5 +20,5 @@ class IndexViewTests(TestCase):
         request = HttpRequest()
         response = index(request)
         html = response.content.decode('utf8')
-        self.assertIn('fuck you mother fuckers!', html)
+        self.assertIn('Yeah!', html)
 
