@@ -7,25 +7,28 @@ language:
 python:
   - "3.6"
 
-services:
-  - docker
+#services:
+#  - docker
+#
+#script:
+#  - docker build -t patcurry/aws-django-docker .
+#  - docker run patcurry/aws-django-docker ./manage.py test
+
+install:
+  - "pip3 install -r requirements.txt"
 
 script:
-  - docker build -t patcurry/aws-django-docker .
-  - docker run patcurry/aws-django-docker ./manage.py test
+  - "python manage.py test"
 
 
 before_deploy: "echo 'ready?'"
         
-
-
 deploy:
   provider: elasticbeanstalk
   access_key_id: $ACCESSKEYID
   secret_access_key:
     secure: "$SECRETACCESSKEY"
   region: "eu-central-1"
-  #app: "django-docker-template"
   app: "django-docker-template"
   env: "django-docker-template-dev"
   bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
