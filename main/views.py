@@ -1,4 +1,4 @@
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("Howdy partners!")
+    return HttpResponse("fuck you mother fuckers!")
