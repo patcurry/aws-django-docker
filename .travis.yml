@@ -4,8 +4,19 @@ sudo: required
 language:
   - python
 
-python:
-  - "3.6"
+matrix:
+  include:
+    - language: python
+      python: 3.6
+      install:
+        - "pip3 install -r requirements.txt"
+      before_script:
+        - echo "python tests"
+      script:
+        - "python manage.py test"
+
+#python:
+#  - "3.6"
 
 #services:
 #  - docker
@@ -14,24 +25,24 @@ python:
 #  - docker build -t patcurry/aws-django-docker .
 #  - docker run patcurry/aws-django-docker ./manage.py test
 
-install:
-  - "pip3 install -r requirements.txt"
-
-script:
-  - "python manage.py test"
-
-
-before_deploy: "echo 'ready?'"
-        
-deploy:
-  provider: elasticbeanstalk
-  access_key_id: $ACCESSKEYID
-  secret_access_key:
-    secure: "$SECRETACCESSKEY"
-  region: "eu-central-1"
-  app: "django-docker-template"
-  env: "django-docker-template-dev"
-  bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
-  skip_cleanup: true
-  on:
-    branch: master
+#install:
+#  - "pip3 install -r requirements.txt"
+#
+#script:
+#  - "python manage.py test"
+#
+#
+#before_deploy: "echo 'ready?'"
+#        
+#deploy:
+#  provider: elasticbeanstalk
+#  access_key_id: $ACCESSKEYID
+#  secret_access_key:
+#    secure: "$SECRETACCESSKEY"
+#  region: "eu-central-1"
+#  app: "django-docker-template"
+#  env: "django-docker-template-dev"
+#  bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
+#  skip_cleanup: true
+#  on:
+#    branch: master
