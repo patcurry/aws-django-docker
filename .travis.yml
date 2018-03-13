@@ -24,9 +24,6 @@ matrix:
       script:
         - "npm run test"
 
-#python:
-#  - "3.6"
-
 #services:
 #  - docker
 #
@@ -34,24 +31,18 @@ matrix:
 #  - docker build -t patcurry/aws-django-docker .
 #  - docker run patcurry/aws-django-docker ./manage.py test
 
-#install:
-#  - "pip3 install -r requirements.txt"
-#
-#script:
-#  - "python manage.py test"
-#
-#
-#before_deploy: "echo 'ready?'"
-#        
-#deploy:
-#  provider: elasticbeanstalk
-#  access_key_id: $ACCESSKEYID
-#  secret_access_key:
-#    secure: "$SECRETACCESSKEY"
-#  region: "eu-central-1"
-#  app: "django-docker-template"
-#  env: "django-docker-template-dev"
-#  bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
-#  skip_cleanup: true
-#  on:
-#    branch: master
+
+before_deploy: "echo 'ready?'"
+        
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESSKEYID
+  secret_access_key:
+    secure: "$SECRETACCESSKEY"
+  region: "eu-central-1"
+  app: "django-docker-template"
+  env: "django-docker-template-dev"
+  bucket_name: "elasticbeanstalk-eu-central-1-707675293479"
+  skip_cleanup: true
+  on:
+    branch: master
