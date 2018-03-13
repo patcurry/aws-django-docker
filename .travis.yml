@@ -14,6 +14,15 @@ matrix:
         - echo "python tests"
       script:
         - "python manage.py test"
+    - language: node_js
+      node_js:
+        - "8"
+      install:
+        - "npm install"
+      before_script:
+        - echo "node javascript tests"
+      script:
+        - "npm run test"
 
 #python:
 #  - "3.6"

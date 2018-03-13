@@ -4,8 +4,8 @@
   "description": "Testing out travis and javascript and stuff",
   "main": "index.js",
   "scripts": {
-    "build": "browserify index.js -t babelify -o ../static/index.js -v",
-    "dev": "watchify index.js -t babelify -o ../static/index.js -v",
+    "build": "browserify js_src/index.js -t babelify -o static/index.js -v",
+    "dev": "watchify js_src/index.js -t babelify -o static/index.js -v",
     "test": "jest"
   },
   "author": "pat curry",
