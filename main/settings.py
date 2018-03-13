@@ -148,7 +148,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, '../aws-django-docker-static'),
 ]
 
 # I can do this, or I can set up a separate s3 bin for the static files.
