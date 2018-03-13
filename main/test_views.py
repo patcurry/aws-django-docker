@@ -22,7 +22,9 @@ class IndexViewTests(TestCase):
         request = HttpRequest()
         response = index(request)
         html = response.content.decode('utf8')
-        self.assertIn('Yeah!', html)
+        self.assertIn('A:', html)
+        self.assertIn('B:', html)
+        self.assertIn('A + B =', html)
 
     def test_index_view_generates_two_integers_between_1_and_1000(self):
         response = client.get('/')
