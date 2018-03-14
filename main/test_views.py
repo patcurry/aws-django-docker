@@ -7,11 +7,6 @@ from main.views import index
 
 client = Client()
 
-class SmokeTest(TestCase):
-
-    def test_bad_maths(self):
-        self.assertEqual(1 + 1, 2)
-
 class IndexViewTests(TestCase):
     
     def test_index_view_resolves(self):
