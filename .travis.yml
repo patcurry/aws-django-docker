@@ -1,8 +1,7 @@
-# .travis.yml
+# aws-django-docker/.travis.yml
 sudo: required
 
-language:
-  - python
+language: python
 
 python:
   - "3.6"
