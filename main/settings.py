@@ -23,7 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k2c=cl#s+au_yh$*a)+b1i044+rp*=-vn*gq+1+^l3)z6vj$2#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -107,11 +108,6 @@ else:
         }
     }
 
-
-
-
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
@@ -164,4 +160,5 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 # MORE AMAZON STUFF
-
+if not DEBUG:
+    from aws_settings import *
