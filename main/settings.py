@@ -23,8 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k2c=cl#s+au_yh$*a)+b1i044+rp*=-vn*gq+1+^l3)z6vj$2#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = False
+DEBUG = True
+#DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -160,5 +160,6 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 
 # MORE AMAZON STUFF
-if not DEBUG:
-    from aws_settings import *
+#if not DEBUG:
+if 'RDS_HOSTNAME' in os.environ:
+    from main.aws_settings import *
