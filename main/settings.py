@@ -38,12 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # THIRD PARTY
-    'storages',
-
-    # LOCAL
-    #'todos',
 ]
 
 MIDDLEWARE = [
@@ -92,15 +86,7 @@ if 'RDS_HOSTNAME' in os.environ:
         }
     }
 else:
-#    DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.postgresql',
-#            'NAME': 'postgres',
-#            'USER': 'postgres',
-#            'HOST': 'db',
-#            'PORT': 5432,
-#        }
-#    }
+    # just sticking with sqlite3 for the development
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -146,20 +132,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '../aws-django-docker-static'),
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, '../aws-django-docker-static'),
+#]
 
 # I can do this, or I can set up a separate s3 bin for the static files.
-STATIC_ROOT = os.path.join(BASE_DIR, '..', 'www', 'static')
-
-# AMAZON HEADER STUFF
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000',
-}
-
-# MORE AMAZON STUFF
-#if not DEBUG:
-if 'RDS_HOSTNAME' in os.environ:
-    from main.aws_settings import *
+#STATIC_ROOT = os.path.join(BASE_DIR, '..', 'www', 'static')
