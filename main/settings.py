@@ -148,18 +148,18 @@ USE_TZ = True
 STATIC_URL = 'https://s3.eu-central-1.amazonaws.com/aws-django-docker-static/'
 
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, '../aws-django-docker-static'),
-]
+#STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, '../aws-django-docker-static'),
+#]
 
 # I can do this, or I can set up a separate s3 bin for the static files.
-STATIC_ROOT = os.path.join(BASE_DIR, '..', 'www', 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, '..', 'www', 'static')
 
 # AMAZON HEADER STUFF
-AWS_S3_OBJECT_PARAMETERS = {
-    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-    'CacheControl': 'max-age=94608000',
-}
+#AWS_S3_OBJECT_PARAMETERS = {
+#    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+#    'CacheControl': 'max-age=94608000',
+#}
 
 # MORE AMAZON STUFF
 #if not DEBUG:
