@@ -11,3 +11,5 @@
 #AWS_S3_OBJECT_PARAMETERS = {
 #    'CacheControl': 'max-age=86400',
 #}
+
+#STATICFILES_STORAGE = 'myproject.storage.S3Storage'
