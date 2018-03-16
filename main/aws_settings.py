@@ -11,3 +11,7 @@
 #AWS_S3_OBJECT_PARAMETERS = {
 #    'CacheControl': 'max-age=86400',
 #}
+
+#STATICFILES_STORAGE = 'myproject.storage.S3Storage'
+
+STATIC_URL = 'https://s3.eu-central-1.amazonaws.com/aws-django-docker-static/'

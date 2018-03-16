@@ -130,11 +130,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
-
-#STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, '../aws-django-docker-static'),
-#]
-
-# I can do this, or I can set up a separate s3 bin for the static files.
-#STATIC_ROOT = os.path.join(BASE_DIR, '..', 'www', 'static')
+STATIC_URL = 'https://s3.eu-central-1.amazonaws.com/aws-django-docker-static/'
